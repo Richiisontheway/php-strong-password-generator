@@ -18,28 +18,23 @@
             <label for="lenght">
                 Lunghezza psw voluta
             </label>
-            <input type="number" name="lenght" id="lenght">
-            <?php
-                    function generate_password(){
-                        $chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.
-                                    '0123456789`-=~!@#$%^&*()_+,./<>?;:[]{}\|';
+            <div>
+                <input type="number" name="lenght" id="lenght">
+                <button type="submit">
+                    genera
+                </button>
+            </div>
                         
-                        $str = '';
-                        $max = strlen($chars) - 1;
-                        
-                        for ($i=0; $i < $_GET['lenght']; $i++)
-                            $str .= $chars[mt_rand(0, $max)];
-                        
-                        return $str;
-                    }
-            ?>
-            <button type="submit">
-                invia
-            </button>
         </form>
-        <?php 
-            echo generate_password();
-        ?>
+        <div>
+            <h2>
+                Password Generata
+            </h2>
+            <?php
+                include './function.php';
+                echo generate_password();
+            ?>
+        </div>
     </main>
 </body>
 </html>
